@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:name="edu.stanford.cs193a.sgalleg9.friendr.ViewUsersFragment"
+        android:id="@+id/view_users_fragment"
+        tools:layout="@layout/fragment_view_users" />
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2">
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="edu.stanford.cs193a.sgalleg9.friendr.ProfileFragment"
+                android:id="@+id/profile_fragment"
+                tools:layout="@layout/fragment_profile" />
+
+        </ScrollView>
+
+</LinearLayout>

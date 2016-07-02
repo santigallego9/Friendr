@@ -24,34 +24,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ImageView button = (ImageView) findViewById(R.id.image_button_main);
-
-        Picasso.with(this)
-                .load("http://www.martystepp.com/friendr/friends/heckles.jpg")
-                .resize(500, 500)
-                .into(button);
     }
 
     public void ViewUsersClicked(View view) {
-        /*Ion.with(this)
-                .load("http://www.martystepp.com/friendr/friends/list")
-                .asString()
-                .setCallback(new FutureCallback<String>() {
-                    @Override
-                    public void onCompleted(Exception e, String result) {
-                        Log.d("Santi", "onCompleted: " + result);
-                    }
-                });*/
-
-
         Intent intent = new Intent(this, ViewUsersActivity.class);
         startActivity(intent);
 
-    }
-
-    public void SwipeClicked(View view) {
-        Intent intent = new Intent(this, SwipeProfilesActivity.class);
-        startActivity(intent);
     }
 }

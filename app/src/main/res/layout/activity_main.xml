@@ -33,20 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:onClick="SwipeClicked"
-        android:text="Swipe to Rate" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:onClick="SignUpClicked"
         android:text="Sign up" />
-
-    <ImageView
-        android:id="@+id/image_button_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>
