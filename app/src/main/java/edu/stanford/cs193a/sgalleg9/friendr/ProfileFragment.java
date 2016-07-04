@@ -1,9 +1,11 @@
 package edu.stanford.cs193a.sgalleg9.friendr;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -32,7 +34,8 @@ public class ProfileFragment extends Fragment {
 
     //@BindView(R.id.user_view) ImageView userPic;
     private static final String WEBSITE_HTTP = "http://www.martystepp.com/friendr/friends/";
-    @BindView(R.id.user_rating) RatingBar ratingBar;
+    @BindView(R.id.user_rating)
+    RatingBar ratingBar;
     private String name;
 
     public ProfileFragment() {
@@ -59,7 +62,7 @@ public class ProfileFragment extends Fragment {
 
         Log.d("Santi2", "onActivityCreated: " + name);
 
-        if(isPortrait()) {
+        if (isPortrait()) {
             Display display = getActivity().getWindowManager().getDefaultDisplay();
             Point size = new Point();
             display.getSize(size);
@@ -93,10 +96,16 @@ public class ProfileFragment extends Fragment {
     }
 
     @OnClick(R.id.user_rating)
-    public void Submit() {
+    public void Submit(String name) {
         double rating = getUserRating();
 
         // TODO: Use SQLite to save the rating of these users
+        FeedReaderContract.FeedEntry.FeedReaderDbHelper mDbHelper = new FeedReaderContract.FeedEntry.FeedReaderDbHelper(getContext());
+
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
     }
 
     public void setProfileDetails(String name) {
